@@ -6,6 +6,7 @@ for (let swiper of allSwipers) {
 		loop: true,
 		spaceBetween: 10,
 		centeredSlides: true,
+		noSwiping: true,
 
 		pagination: {
 			el: '.swiper-pagination',

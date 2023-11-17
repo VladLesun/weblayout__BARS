@@ -2,14 +2,9 @@
 	padding: 50px 0;
 }
 
-.contacts__title {
-	font-size: 70px;
-	margin-bottom: 50px;
-}
-
 .form {
 	display: flex;
-	align-items: center;
+	align-items: flex-end;
 	justify-content: center;
 	flex-wrap: wrap;
 	gap: 30px 20px;
@@ -29,9 +24,13 @@
 
 .form__input {
 	width: 100%;
-	padding: 10px 0 10px 15px;
+	padding: 20px 0 20px 20px;
 	border: 1px solid var(--main-color);
 	border-radius: 30px;
+}
+
+.form__input::placeholder {
+  color: #bbbbbb;
 }
 
 .form__submit {

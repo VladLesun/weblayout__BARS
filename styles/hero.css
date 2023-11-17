@@ -23,15 +23,13 @@
 
 .hero__title {
 	max-width: 1200px;
-	font-size: 70px;
-  text-align: center;
-	margin-bottom: 40px;
+	text-align: center;
 }
 
 .hero__descr {
 	max-width: 1200px;
 	font-size: 28px;
-  text-align: center;
+	text-align: center;
 	margin-bottom: 70px;
 }
 

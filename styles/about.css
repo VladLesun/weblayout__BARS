@@ -1,10 +1,14 @@
 .about {
 	padding: 100px 0 80px;
 }
-.about__title {
-	font-size: 70px;
-	margin-bottom: 30px;
+
+.about__container {
+	background-image: url('../img/sofa.svg');
+	background-position: 70% center;
+	background-repeat: no-repeat;
 }
+
 .about__descr {
-  max-width: 600px;
+	max-width: 500px;
+	font-size: 25px;
 }

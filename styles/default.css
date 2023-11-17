@@ -9,7 +9,6 @@ html {
 	box-sizing: inherit;
 }
 
-
 :root {
 	--main-color: #000;
 	--second-color: #fff;
@@ -77,4 +76,9 @@ body {
 	max-width: calc(var(--container-width) + (var(--container-padding) * 2));
 	padding: 0 var(--container-padding);
 	margin: 0 auto;
+}
+
+.section-title {
+	font-size: 70px;
+	margin-bottom: 50px;
 }

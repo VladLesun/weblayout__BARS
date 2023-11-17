@@ -45,6 +45,9 @@
 }
 
 .footer__list-social {
+  display: flex;
+  align-items: center;
+  gap: 40px ;
 }
 
 .footer__item-social {
