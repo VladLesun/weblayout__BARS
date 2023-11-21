@@ -1,8 +1,9 @@
-@import 'styles/normalize.css';
-@import 'styles/swiper.min.css';
 @import 'styles/fonts.css';
 @import 'styles/default.css';
 @import 'styles/header.css';
+@import 'styles/burger.css';
+@import 'styles/menu.css';
+@import 'styles/social.css';
 @import 'styles/hero.css';
 @import 'styles/about.css';
 @import 'styles/product.css';

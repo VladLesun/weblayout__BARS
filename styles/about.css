@@ -2,13 +2,43 @@
 	padding: 100px 0 80px;
 }
 
-.about__container {
+/* .about__container {
 	background-image: url('../img/sofa.svg');
 	background-position: 70% center;
 	background-repeat: no-repeat;
-}
+} */
 
 .about__descr {
-	max-width: 500px;
-	font-size: 25px;
+	max-width: 650px;
+	font-size: 28px;
+}
+
+@media (max-width: 1000px) {
+	.about {
+		padding: 80px 0;
+	}
+	.about__descr {
+		max-width: 750px;
+		font-size: 24px;
+	}
+}
+
+@media (max-width: 760px) {
+	.about {
+		padding: 50px 0;
+	}
+	.about__descr {
+		max-width: 550px;
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 580px) {
+	.about {
+		padding: 30px 0;
+	}
+	.about__descr {
+		text-align: center;
+		font-size: 18px;
+	}
 }

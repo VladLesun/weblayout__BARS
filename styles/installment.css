@@ -1,6 +1,5 @@
 .installment {
 	padding: 50px 0;
-	background-color: #e5e4e2;
 }
 
 .installment__descr {
@@ -25,10 +24,56 @@
 .installment__svg {
 	flex: 1 0 150px;
 	width: 150px;
-	height: 150px;
 }
 
 .installment__content-descr {
 	text-align: start;
 	max-width: 500px;
+}
+
+@media (max-width: 1000px) {
+	.installment {
+		padding: 30px 0;
+	}
+	.installment__descr {
+		font-size: 24px;
+	}
+	.installment__svg {
+		flex: 1 0 120px;
+		width: 120px;
+	}
+}
+
+@media (max-width: 760px) {
+	.installment__descr {
+		font-size: 20px;
+	}
+	.installment__content {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 20px;
+	}
+	.installment__svg {
+		flex: 1 0 100px;
+		width: 100px;
+	}
+}
+
+@media (max-width: 580px) {
+	.installment {
+		padding: 15px 0;
+	}
+	.installment__descr {
+		margin-bottom: 10px;
+	}
+	.installment__content {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 0;
+	}
+	.installment__content-descr {
+		text-align: center;
+	}
 }

@@ -31,9 +31,13 @@
 		<meta name="msapplication-TileColor" content="#000000" />
 		<meta name="theme-color" content="#ffffff" />
 
+		<link rel="stylesheet" href="styles/normalize.css" />
+		<link rel="stylesheet" href="styles/swiper.min.css" />
 		<link rel="stylesheet" href="index.css" />
 
 		<script src="js/modules/swiper.min.js" defer></script>
+		<script src="js/modules/justValidate.min.js" defer></script>
+		<script src="js/modules/inputmask.min.js" defer></script>
 		<script src="js/main.js" defer></script>
 	</head>
 
@@ -47,38 +51,76 @@
 				/>
 
 				<nav class="header__navigation">
-					<ul class="header__list">
-						<li class="header__item">
-							<a href="#about" class="header__link">О нас</a>
-						</li>
-						<li class="header__item">
-							<a href="#products" class="header__link">Каталог</a>
-						</li>
-						<li class="header__item">
-							<a href="#contacts" class="header__link">Контакты</a>
-						</li>
-						<li class="header__item">
-							<a href="#installment" class="header__link">Рассрочка</a>
-						</li>
-					</ul>
-					<ul class="header__list social">
-						<li class="social__item">
-							<a
-								href="https://instagram.com/bars_mebel_belarus?igshid=MW1id3pxZXA2eHZpZw=="
-								target="_blank"
-								class="social__link social__link_instagram"
-							>
-							</a>
-						</li>
-						<li class="social__item">
-							<a
-								href="https://www.tiktok.com/@bars_mebel_belarus"
-								target="_blank"
-								class="social__link social__link_tiktok"
-							>
-							</a>
-						</li>
-					</ul>
+					<button class="header__burger burger" aria-label="Меню">
+						<span class="burger__top"></span>
+						<span class="burger__middle"></span>
+						<span class="burger__bottom"></span>
+					</button>
+
+					<div class="header__menu">
+						<div class="menu">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a
+										class="menu__link menu__link_text"
+										href="#"
+										tabindex="0"
+										data-link="about"
+									>
+										О нас
+									</a>
+								</li>
+								<li class="menu__item">
+									<a
+										class="menu__link menu__link_text"
+										href="#"
+										tabindex="0"
+										data-link="products"
+									>
+										Каталог
+									</a>
+								</li>
+								<li class="menu__item">
+									<a
+										class="menu__link menu__link_text"
+										href="#"
+										tabindex="0"
+										data-link="contacts"
+									>
+										Контакты
+									</a>
+								</li>
+								<li class="menu__item">
+									<a
+										class="menu__link menu__link_text"
+										href="#"
+										tabindex="0"
+										data-link="installment"
+									>
+										Рассрочка
+									</a>
+								</li>
+							</ul>
+							<ul class="menu__list social">
+								<li class="menu__item social__menu-item">
+									<a
+										href="https://instagram.com/bars_mebel_belarus?igshid=MW1id3pxZXA2eHZpZw=="
+										target="_blank"
+										class="menu__link social__link social__link_instagram"
+									>
+									</a>
+								</li>
+								<li class="menu__item social__menu-item">
+									<a
+										href="https://www.tiktok.com/@bars_mebel_belarus"
+										target="_blank"
+										class="menu__link social__link social__link_tiktok"
+									>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</nav>
 			</div>
 		</header>
@@ -87,25 +129,16 @@
 			<section class="hero">
 				<div class="hero__container">
 					<div class="hero__content">
-						<h1 class="hero__title section-title">
-							B.ARS MEBEL - лучшие диваны для твоего комфорта
-						</h1>
-						<p class="hero__descr">
-							Далеко-далеко за словесными горами в стране гласных и согласных
-							живут рыбные тексты. Осталось по всей напоивший, текстами встретил
-							составитель не злых прямо эта повстречался она вопрос большого
-							использовало дорогу последний продолжил журчит необходимыми.
-						</p>
+						<h1 class="hero__title">B.ARS MEBEL</h1>
+						<p class="hero__descr">лучшие диваны для твоего комфорта</p>
 						<a href="#contacts" class="hero__link">Оставить заявку</a>
 					</div>
 					<video
 						autoplay
 						loop
 						muted
-						played
 						preload="auto"
 						playsinline
-						webkit-playinginline
 						class="hero__video"
 					>
 						<source src="video/herovideo.MOV" />
@@ -133,7 +166,7 @@
 					<div class="product">
 						<h3 class="product__title">Loft Relax</h3>
 
-						<div class="product__wrap-swiper-content">
+						<div class="product__wrap-swiper-content" tabindex="-1">
 							<div class="swiper product__swiper swiper-no-swiping">
 								<div class="swiper-wrapper product__wiper-wrapper">
 									<div class="swiper-slide product__swiper-slide">
@@ -165,27 +198,23 @@
 										/>
 									</div>
 								</div>
-								<!-- If we need pagination -->
-								<div class="swiper-pagination product__pagination"></div>
-
-								<!-- If we need navigation buttons -->
 								<div
 									class="swiper-button-prev product__swiper-button button-prev"
 								></div>
 								<div
 									class="swiper-button-next product__swiper-button button-next"
 								></div>
+								<div class="swiper-pagination product__pagination"></div>
 							</div>
 						</div>
 
 						<div class="product__content">
 							<p class="product__descr">
-								Ультрасовременный дизайн с повышенной мягкостью. Идеально
-								подойдет как для дома, так и для квартиры. Каждый модуль может
-								быть отсоединен друг от друга для удобства или зонирования
-								пространства. При необходимости может быть оборудован спальным
-								местом с механизмом пума. Создается в различных размерах по
-								вашему желанию.
+								Модульная система дивана "Лофт Релакс". Диван повышенной
+								мягкости. Ультрасовременный дизайн и комфорт Модулями собирается
+								в необходимый размер, при необходимости оснащается спальным
+								механизмом Для подбора модулей в ваш размер свяжитесь с нашими
+								менеджерами.
 							</p>
 							<div class="product__buttons">
 								<a
@@ -193,10 +222,10 @@
 									href="https://www.instagram.com/reel/CzI1ojXN6NC/?igshid=MzRlODBiNWFlZA=="
 									target="_blank"
 								>
-									Подробнее
+									Видеообзор
 								</a>
-								<a class="product__link product__order" href="#contacts">
-									Заказать
+								<a class="product__link product__consultation" href="#contacts">
+									Консультация
 								</a>
 							</div>
 						</div>
@@ -230,27 +259,23 @@
 										/>
 									</div>
 								</div>
-								<!-- If we need pagination -->
-								<div class="swiper-pagination product__pagination"></div>
-
-								<!-- If we need navigation buttons -->
 								<div
 									class="swiper-button-prev product__swiper-button button-prev"
 								></div>
 								<div
 									class="swiper-button-next product__swiper-button button-next"
 								></div>
+								<div class="swiper-pagination product__pagination"></div>
 							</div>
 						</div>
 
 						<div class="product__content">
 							<p class="product__descr">
-								Ультрасовременный дизайн с повышенной мягкостью. Идеально
-								подойдет как для дома, так и для квартиры. Каждый модуль может
-								быть отсоединен друг от друга для удобства или зонирования
-								пространства. При необходимости может быть оборудован спальным
-								местом с механизмом пума. Создается в различных размерах по
-								вашему желанию.
+								Диван кровать "Калипсо", благодаря дизайну может выполняться без
+								подлокотников, что позволяет экономить пространство не экономя
+								на посадочном месте. Посадка в стиле релакс создает максимальный
+								комфорт. Механизм раскладывания "Пума". Для просчета стоимости
+								свяжитесь с нашими менеджерами.
 							</p>
 							<div class="product__buttons">
 								<a
@@ -258,10 +283,10 @@
 									href="https://www.instagram.com/reel/CyiKDfKtESv/?igshid=MzRlODBiNWFlZA=="
 									target="_blank"
 								>
-									Подробнее
+									Видеообзор
 								</a>
-								<a class="product__link product__order" href="#contacts">
-									Заказать
+								<a class="product__link product__consultation" href="#contacts">
+									Консультация
 								</a>
 							</div>
 						</div>
@@ -288,27 +313,23 @@
 										/>
 									</div>
 								</div>
-								<!-- If we need pagination -->
-								<div class="swiper-pagination product__pagination"></div>
-
-								<!-- If we need navigation buttons -->
 								<div
 									class="swiper-button-prev product__swiper-button button-prev"
 								></div>
 								<div
 									class="swiper-button-next product__swiper-button button-next"
 								></div>
+								<div class="swiper-pagination product__pagination"></div>
 							</div>
 						</div>
 
 						<div class="product__content">
 							<p class="product__descr">
-								Ультрасовременный дизайн с повышенной мягкостью. Идеально
-								подойдет как для дома, так и для квартиры. Каждый модуль может
-								быть отсоединен друг от друга для удобства или зонирования
-								пространства. При необходимости может быть оборудован спальным
-								местом с механизмом пума. Создается в различных размерах по
-								вашему желанию.
+								Диван "Миссони" Хорошее решение для гостиной комнаты и кухни.
+								Позволяет экономить пространство, а с механизмом раскладывания
+								превращается в полноценное спальное место, Ткань, мягкость
+								наполнения и размер подбираются индивидуально. Свяжитесь с
+								менеджером для просчета стоимости.
 							</p>
 							<div class="product__buttons">
 								<a
@@ -316,10 +337,10 @@
 									href="https://www.instagram.com/reel/CvULUrpJ7wA/?igshid=MzRlODBiNWFlZA=="
 									target="_blank"
 								>
-									Подробнее
+									Видеообзор
 								</a>
-								<a class="product__link product__order" href="#contacts">
-									Заказать
+								<a class="product__link product__consultation" href="#contacts">
+									Консультация
 								</a>
 							</div>
 						</div>
@@ -360,27 +381,22 @@
 										/>
 									</div>
 								</div>
-								<!-- If we need pagination -->
-								<div class="swiper-pagination product__pagination"></div>
-
-								<!-- If we need navigation buttons -->
 								<div
 									class="swiper-button-prev product__swiper-button button-prev"
 								></div>
 								<div
 									class="swiper-button-next product__swiper-button button-next"
 								></div>
+								<div class="swiper-pagination product__pagination"></div>
 							</div>
 						</div>
 
 						<div class="product__content">
 							<p class="product__descr">
-								Ультрасовременный дизайн с повышенной мягкостью. Идеально
-								подойдет как для дома, так и для квартиры. Каждый модуль может
-								быть отсоединен друг от друга для удобства или зонирования
-								пространства. При необходимости может быть оборудован спальным
-								местом с механизмом пума. Создается в различных размерах по
-								вашему желанию.
+								Диван "Палермо" отличается современным уникальным дизайном.
+								Может быть выполнен в ваших размерах, ткани и наполнении.
+								Угловой либо прямой вариант с комфортным спальным местом. Для
+								просчета стоимости свяжитесь с нашими менеджерами.
 							</p>
 							<div class="product__buttons">
 								<a
@@ -388,10 +404,10 @@
 									href="https://www.instagram.com/reel/Cu7I3kusRgL/?igshid=MzRlODBiNWFlZA=="
 									target="_blank"
 								>
-									Подробнее
+									Видеообзор
 								</a>
-								<a class="product__link product__order" href="#contacts">
-									Заказать
+								<a class="product__link product__consultation" href="#contacts">
+									Консультация
 								</a>
 							</div>
 						</div>
@@ -453,27 +469,23 @@
 										/>
 									</div>
 								</div>
-								<!-- If we need pagination -->
-								<div class="swiper-pagination product__pagination"></div>
-
-								<!-- If we need navigation buttons -->
 								<div
 									class="swiper-button-prev product__swiper-button button-prev"
 								></div>
 								<div
 									class="swiper-button-next product__swiper-button button-next"
 								></div>
+								<div class="swiper-pagination product__pagination"></div>
 							</div>
 						</div>
 
 						<div class="product__content">
 							<p class="product__descr">
-								Ультрасовременный дизайн с повышенной мягкостью. Идеально
-								подойдет как для дома, так и для квартиры. Каждый модуль может
-								быть отсоединен друг от друга для удобства или зонирования
-								пространства. При необходимости может быть оборудован спальным
-								местом с механизмом пума. Создается в различных размерах по
-								вашему желанию.
+								Диван "Честер" Одна из самых популярных моделей. Выделяющаяся из
+								среди других видов мягкой мебели. Отличается неизменно высоким
+								качеством, легко трансформируется в удобное спальное место.
+								Выполняется, как в традиционно кожаных, так и в современных
+								Обивочных тканях. Свяжитесь с менеджером для просчета стоимости.
 							</p>
 							<div class="product__buttons">
 								<a
@@ -481,10 +493,10 @@
 									href="#!"
 									target="_blank"
 								>
-									Подробнее
+									Видеообзор
 								</a>
-								<a class="product__link product__order" href="#contacts">
-									Заказать
+								<a class="product__link product__consultation" href="#contacts">
+									Консультация
 								</a>
 							</div>
 						</div>
@@ -532,27 +544,24 @@
 										/>
 									</div>
 								</div>
-								<!-- If we need pagination -->
-								<div class="swiper-pagination product__pagination"></div>
-
-								<!-- If we need navigation buttons -->
 								<div
 									class="swiper-button-prev product__swiper-button button-prev"
 								></div>
 								<div
 									class="swiper-button-next product__swiper-button button-next"
 								></div>
+								<div class="swiper-pagination product__pagination"></div>
 							</div>
 						</div>
 
 						<div class="product__content">
 							<p class="product__descr">
-								Классический модульный диван. Идеально подходит для зала и
-								гостинной. Оснащен механизмом раскладывания «Дельфин» - ,
-								который создает полноценное спальное место. Подходит для
-								ежедневного использования. Имеет много вариантов комплектации (
-								Бар, ниша для хранения, регулируемые подголовники в несколько
-								этапов)
+								"Пул" классический модульный диван. Идеально подходит для зала и
+								гостиной. Оснащается механизмом «Дельфин» либо «Пума». Подходит
+								для ежедневного сна. Имеет много вариантов комплектации (Бар,
+								ниша для хранения, регулируемые подголовники) Для подбора
+								комплектации и расчета стоимости Вашего размера свяжитесь с
+								нашими менеджерами.
 							</p>
 							<div class="product__buttons">
 								<a
@@ -560,10 +569,10 @@
 									href="https://www.instagram.com/reel/CzgFf_PNHe9/?igshid=MzRlODBiNWFlZA=="
 									target="_blank"
 								>
-									Подробнее
+									Видеообзор
 								</a>
-								<a class="product__link product__order" href="#contacts">
-									Заказать
+								<a class="product__link product__consultation" href="#contacts">
+									Консультация
 								</a>
 							</div>
 						</div>
@@ -576,12 +585,19 @@
 					<h2 class="contacts__title section-title">Связаться с нами</h2>
 					<form class="contacts__form form">
 						<div class="form__label-wrap">
-							<label class="form__label" for="name"> Введите имя </label>
+							<label
+								class="form__label"
+								for="name"
+								aria-label="Введите ваше имя"
+							>
+								Введите имя
+							</label>
 							<input
 								class="form__input"
 								type="text"
 								id="name"
 								name="name"
+								aria-label="Введите ваше имя"
 								placeholder="Например: Иван"
 							/>
 						</div>
@@ -595,6 +611,7 @@
 								type="tel"
 								id="phone"
 								name="phone"
+								aria-label="Введите ваш мобильный телефон"
 								placeholder="Например: +375(**) 999-99-99"
 							/>
 						</div>
@@ -602,6 +619,8 @@
 						<button class="form__submit" type="submit">
 							Заказать обратный звонок
 						</button>
+
+						<div class="contacts__error"></div>
 					</form>
 				</div>
 			</section>
@@ -610,7 +629,7 @@
 				<div class="container">
 					<h2 class="installment__title section-title">Виды рассрочки</h2>
 					<p class="installment__descr">
-						Наши изделия можно приобрести в рассрочку
+						Наши изделия можно приобрести в рассрочку.
 						<br />
 						Имеется два вида рассрочки:
 					</p>
@@ -660,56 +679,59 @@
 		<footer class="footer">
 			<div class="container footer__container">
 				<address class="footer__contacts">
-					<a href="tel:375297033238" class="footer__item footer__link">
-						+375(29) 703 32 38
-					</a>
 					<a
 						href="mailto:b.ars-expa@yandex.ru"
-						class="footer__item footer__link"
+						class="footer__item footer__item-address footer__address-mail"
 					>
 						b.ars-expa@yandex.ru
+					</a>
+					<a
+						href="tel:375297033238"
+						class="footer__item footer__item-address footer__address-tel"
+					>
+						+375(29) 703 32 38
 					</a>
 				</address>
 
 				<div class="footer__lists">
-					<ul class="footer__list-social">
-						<li class="footer__item-social social__item">
+					<ul class="footer__list-social social">
+						<li class="footer__item-social social__item social__item_footer">
 							<a
 								href="https://www.tiktok.com/@bars_mebel_belarus"
 								target="_blank"
-								class="social__link social__link_tiktok"
+								class="social__link social__link_footer social__link_instagram"
 							>
 							</a>
 						</li>
-						<li class="footer__item-social social__item">
+						<li class="footer__item-social social__item social__item_footer">
 							<a
 								href="https://www.tiktok.com/@bars_mebel_belarus"
 								target="_blank"
-								class="social__link social__link_instagram"
+								class="social__link social__link_footer social__link_telegram"
 							>
 							</a>
 						</li>
-						<li class="footer__item-social social__item">
+						<li class="footer__item-social social__item social__item_footer">
 							<a
 								href="https://www.tiktok.com/@bars_mebel_belarus"
 								target="_blank"
-								class="social__link social__link_tiktok"
+								class="social__link social__link_footer social__link_tiktok"
 							>
 							</a>
 						</li>
-						<li class="footer__item-social social__item">
+						<li class="footer__item-social social__item social__item_footer">
 							<a
 								href="https://www.tiktok.com/@bars_mebel_belarus"
 								target="_blank"
-								class="social__link social__link_instagram"
+								class="social__link social__link_footer social__link_whatsapp"
 							>
 							</a>
 						</li>
-						<li class="footer__item-social social__item">
+						<li class="footer__item-social social__item social__item_footer">
 							<a
 								href="https://www.tiktok.com/@bars_mebel_belarus"
 								target="_blank"
-								class="social__link social__link_tiktok"
+								class="social__link social__link_footer social__link_messenger"
 							>
 							</a>
 						</li>
