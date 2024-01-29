@@ -22,6 +22,12 @@ const fs = require('fs');
 const image = require('gulp-imagemin');
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
+const rev = require('gulp-rev');
+const revRewrite = require('gulp-rev-rewrite');
+const revDel = require('gulp-rev-delete-original');
+const zip = require('gulp-zip');
+const path = require('path');
+const rootFolder = path.basename(path.resolve());
 
 //! Путь к файлам
 const srcFolder = './src';
@@ -267,6 +273,43 @@ const watchFiles = () => {
 const resources = () => {
 	return src(`${paths.resourcesFolder}/**`).pipe(dest(`${distFolder}`));
 };
+
+const cache = () => {
+	return src(`${distFolder}/**/*.{css,js,svg,png,jpg,jpeg,webp,woff2}`, {
+		base: distFolder,
+	})
+		.pipe(rev())
+		.pipe(revDel())
+		.pipe(dest(distFolder))
+		.pipe(rev.manifest('rev.json'))
+		.pipe(dest(distFolder));
+};
+
+const rewrite = () => {
+	const manifest = fs.readFileSync('dist/rev.json');
+	src(`${paths.distCssFolder}/*.css`)
+		.pipe(revRewrite({ manifest }))
+		.pipe(dest(paths.distCssFolder));
+	return src(`${distFolder}/**/*.html`)
+		.pipe(revRewrite({ manifest }))
+		.pipe(dest(distFolder));
+};
+
+const zipFiles = () => {
+	del.sync([`${distFolder}/*.zip`]);
+	return src(`${distFolder}/**/*.*`, {})
+		.pipe(
+			plumber(
+				notify.onError({
+					title: 'ZIP',
+					message: 'Error: <%= error.message %>',
+				})
+			)
+		)
+		.pipe(zip(`${rootFolder}.zip`))
+		.pipe(dest(distFolder));
+};
+
 const toProd = (done) => {
 	isProd = true;
 	done();
@@ -301,3 +344,9 @@ exports.build = series(
 	fontStyle,
 	htmlMinify
 );
+
+//! очистка кеша
+exports.cache = series(cache, rewrite);
+
+//! Упаковать файлы в .zip
+exports.zip = zipFiles;
