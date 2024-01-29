@@ -3,6 +3,7 @@ import { setBurger } from './functions/burger';
 import { swiper } from './functions/swiper';
 import { sendForm } from './functions/sendForm';
 import 'lazysizes';
+import { resize } from './functions/video';
 
 function init() {
 	const links = document.querySelectorAll('.transfer-link');

@@ -97,14 +97,25 @@ body {
 	margin-bottom: 50px;
 }
 
-@media (max-width: 1200px) {
+.video-desktop {
+	display: block;
+}
+.video-mobile {
+	display: none;
+}
+
+@include laptop-L {
 	.container {
 		--container-width: 1100px;
 		--container-padding: 50px;
 	}
+	.section-title {
+		font-size: 65px;
+		margin-bottom: 45px;
+	}
 }
 
-@media (max-width: 1000px) {
+@include laptop {
 	.container {
 		--container-width: 920px;
 		--container-padding: 40px;
@@ -115,7 +126,7 @@ body {
 	}
 }
 
-@media (max-width: 760px) {
+@include tablet {
 	.container {
 		--container-padding: 20px;
 	}
@@ -125,10 +136,16 @@ body {
 	}
 }
 
-@media (max-width: 580px) {
+@include mobile {
 	.container {
 		--container-width: 560px;
 		--container-padding: 10px;
+	}
+	.video-desktop {
+		display: none;
+	}
+	.video-mobile {
+		display: block;
 	}
 	.section-title {
 		font-size: 28px;

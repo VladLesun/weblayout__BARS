@@ -21,14 +21,6 @@
 	}
 }
 
-@include laptop-L {
-	.header {
-		&__menu {
-			gap: 40px;
-		}
-	}
-}
-
 @include laptop {
 	.header {
 		&__menu {
